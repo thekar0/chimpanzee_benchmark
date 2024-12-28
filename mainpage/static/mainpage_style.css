@@ -1,0 +1,119 @@
+*{
+    font-family: Bahnschrift;
+}
+body{
+    margin: 0; 
+    background-color: #181c1c;
+}
+
+/*========= HEADER =========*/
+header{
+    background-color: #101414;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    /* When scrolling header will be always on top and above everything */
+}
+#container{
+    justify-content: center;
+}
+header div{
+    display: flex;
+}
+header div h4{
+    margin: 0.6rem 0.5rem;
+    color: #f2f0ed;
+}
+#spacer{
+    width: 25rem;
+}
+.menu_options{
+    transition: 0.3s;
+}
+.menu_options:hover{
+    cursor: pointer;
+    color: #9b9b9b;
+    transform: scale(1.03);
+}
+/*========= HEADER =========*/
+
+/*========= MAIN =========*/
+main{
+    height: 30rem;
+    background-color: #196aab;
+    display: flex;
+    justify-content: center;
+}
+main article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+main article h1{
+    font-size: 4rem;
+    margin: 0.1rem;
+}
+main article h1, h3{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #f2f0ed;
+}
+#monkey_svg{
+    height: 15rem;
+}
+/*========= MAIN =========*/
+
+/*========= FOOTER =========*/
+footer{
+    background-color: #181c1c;
+}
+footer{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.games_blocks{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0.5rem;
+    color: #f2f0ed;
+    background-color: #0e1110;
+    transition: 0.3s;
+}
+.games_blocks:hover{
+    cursor: pointer;
+    transform: translateY(-1.2rem);
+    color: #8b8b8b;
+}
+.games_blocks_svg{
+    height: 5rem;
+}
+.soon{
+    background-color: rgba(255, 255, 0, 0.5);
+    padding: 0.15rem;
+    border-radius: 0.5rem;
+}
+.new{
+    background-color: rgba(255, 0, 0, 0.5);
+    padding: 0.15rem;
+    border-radius: 0.5rem;
+}
+#games_blocks_container{
+    display: flex;
+}
+
+@media only screen and (max-width: 1050px) { /* When the screen's width is less than 1050px the game blocks are organized in a column */
+    #games_blocks_container{
+        flex-direction: column;
+    }
+    .games_blocks:hover{
+        transform: translateY(-0.6rem);
+  }
+}
+/*========= FOOTER =========*/
