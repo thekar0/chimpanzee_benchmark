@@ -1,0 +1,164 @@
+body{
+    font-family: Bahnschrift;
+    margin: 0; 
+    background-color: #181c1c;
+}
+a{
+    text-decoration: none;
+}
+/*========= HEADER =========*/
+header{
+    background-color: #101414;
+    position: sticky;
+    top: 0;
+    z-index: 1; /* When scrolling header will be always on top and above everything */
+}
+#container{
+    justify-content: center;
+}
+header div{
+    display: flex;
+}
+header div h4{
+    margin: 0.6rem 0.5rem;
+    color: #f2f0ed;
+}
+#spacer{
+    width: 25rem;
+}
+.menu_options{
+    transition: 0.3s;
+}
+.menu_options:hover{
+    cursor: pointer;
+    color: #9b9b9b;
+}
+/*========= HEADER =========*/
+
+/*========= MAIN =========*/
+main{
+    height: 30rem;
+    background-color: #196aab;
+    display: flex;
+    justify-content: center;
+}
+main article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+main article h1{
+    font-size: 3rem;
+    margin: 0.1rem;
+}
+main article h1, main article h2, main article h3, button{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #f2f0ed;
+}
+#chimp_svg{
+    height: 15rem;
+}
+#start_button, #retry_option, #save_score{
+    display: flex;
+    justify-content: center;
+    width: 6rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: #735100;
+    border: none;
+    border-radius: 0.2rem;
+    color: white;
+    transition: 0.3s;
+    text-decoration: none;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 0.4rem;
+    margin-right: auto;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+#start_button:hover , #retry_option:hover, #save_score:hover{
+    background-color: #a17100;
+    transform: scale(1.01);
+    color: black;
+}
+table {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    height: 26rem;
+    width: 26rem;
+    user-select: none; /* Stop the user from doing this blue highlight when clicking and dragging the mouse */
+    border-spacing: 0.5rem;
+}
+
+tr {
+    display: flex;
+    width: 100%;
+}
+
+td {
+    margin: 0.5rem;
+    flex: 0rem 0rem 3.5rem; /* Set base size for each cell (fixed size) */
+    height: 3.5rem;
+    width: 3.5rem;
+    text-align: center;
+    background-color: #196aab;
+    border: 0.15rem solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.4rem;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #f2f0ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border 0.2s;
+}
+
+td:hover {
+    border: 0.15rem solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+/*========= MAIN =========*/
+
+/*========= FOOTER =========*/
+footer{
+    background-color: #181c1c;
+}
+footer{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.quiz_info_block{
+    width: 20rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0.5rem;
+    color: #f2f0ed;
+    background-color: #0e1110;
+    transition: 0.3s;
+}
+
+#quiz_info_block_container{
+    display: flex;
+}
+#average_score_block h1{
+    font-size: 5.8rem;
+}
+@media only screen and (max-width: 1050px) { /* When the screen's width is less than 1050px the game blocks are organized in a column */
+    #games_blocks_container{
+        flex-direction: column;
+    }
+    .games_blocks:hover{
+        transform: translateY(-0.6rem);
+  }
+}
+/*========= FOOTER =========*/

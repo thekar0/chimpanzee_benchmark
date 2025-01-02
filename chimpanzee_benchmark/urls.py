@@ -19,5 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('mainpage/', include("mainpage.urls")) #We have added the mainpage app to the url patterns
+    path('', include("mainpage.urls")), #We have added the mainpage app to the url patterns
+    path('chimptest/', include("chimptest.urls")), #We have added the mainpage app to the url patterns
 ]

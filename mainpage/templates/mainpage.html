@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'mainpage_style.css' %}">
-    <link rel="shortcut icon" href="{% static 'monkey.svg' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'svg/monkey.svg' %}" type="image/x-icon">
     <title>Chimpanzee Benchmark</title>
 </head>
 <body>
@@ -13,13 +13,13 @@
     <header>
         <div id="container">
             <div>
-                <h4 class="menu_options">CHIMPANZEE BENCHMARK</h4>
-                <h4 class="menu_options">DASHBOARD</h4>
+                <a href="../mainpage"><h4 class="menu_options">CHIMPANZEE BENCHMARK</h4></a>
+                <a href=""><h4 class="menu_options">DASHBOARD</h4></a>
             </div>
             <h4 id="spacer"></h4> <!--Used to space "Chimpanzee Benchmark, Dashboard And Sign Up, Log in apart"-->
             <div>
-                <h4 class="menu_options">SIGN UP</h4>
-                <h4 class="menu_options">LOG IN</h4>
+                <a href=""><h4 class="menu_options">SIGN UP</h4></a>
+                <a href=""><h4 class="menu_options">LOG IN</h4></a>
             </div>
         </div>
     </header>
@@ -34,24 +34,24 @@
 
     <footer>
         <section id="games_blocks_container"> <!-- A selection of tests to choose -->
-            <section class="games_blocks" id="reaction_time">
+            <a class="games_blocks" id="reaction_time">
                 <img src="{% static 'svg/reaction_time.svg' %}" alt="reaction_time" class="games_blocks_svg">
                 <h2>Reaction Time</h2>
                 <h4>Test your reflexes.</h4>
                 <h3 class="soon">SOON</h3>
-            </section>
-            <section class="games_blocks" id="chimp_test">
+            </a>
+            <a href="../chimptest/" class="games_blocks" id="chimp_test">
                 <img src="{% static 'svg/chimp_test.svg' %}" alt="chimp_test" class="games_blocks_svg">
                 <h2>Chimp Test</h2>
                 <h4>Are you smarter than a Chimpanzee?</h4>
                 <h3 class="new">NEW</h3>
-            </section>
-            <section class="games_blocks" id="ger">
+            </a>
+            <a class="games_blocks" id="ger">
                 <img src="{% static 'svg/verbal_memory.svg' %}" alt="verbal_memory" class="games_blocks_svg">
                 <h2>Verbal Memory</h2>
                 <h4>Test your memory.</h4>
                 <h3 class="soon">SOON</h3>
-            </section>
+            </a>
         </section>
     </footer>
 

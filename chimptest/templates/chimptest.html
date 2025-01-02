@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %} <!-- Static files mean CSS, JS, images... -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'chimptest_style.css' %}">
+    <link rel="shortcut icon" href="{% static 'svg/monkey.svg' %}" type="image/x-icon">
+    <title>Chimpanzee Benchmark</title>
+    <script src="{% static 'scripts/chimptest.js' %}"></script>
+</head>
+<body>
+
+    <header>
+        <div id="container">
+            <div>
+                <a href="../mainpage"><h4 class="menu_options">CHIMPANZEE BENCHMARK</h4></a>
+                <a href=""><h4 class="menu_options">DASHBOARD</h4></a>
+            </div>
+            <h4 id="spacer"></h4> <!--Used to space "Chimpanzee Benchmark, Dashboard And Sign Up, Log in apart"-->
+            <div>
+                <a href=""><h4 class="menu_options">SIGN UP</h4></a>
+                <a href=""><h4 class="menu_options">LOG IN</h4></a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main"> <!-- Main part of the site, a placeholder for the tests -->
+        <article id="quiz_placeholder">
+            <img src="{% static 'svg/chimp_test_big.svg' %}" alt="chimp_test" id="chimp_svg">
+            <h1>Chimp Test</h1>
+            <h3>Ready to get started?</h3>
+            <button type="button" id="start_button">Start!</button>
+        </article>
+        <!--If you are trying to see the values go ahead, but you know you just could do a screenshot ? Even your grandma could do a quick pic of the screen!-->
+
+        <article id="game_end" style="display: none">
+            <img src="{% static 'svg/chimp_test_big.svg' %}" alt="chimp_test" id="chimp_svg">
+            <h2>Score</h2>
+            <h1 id="score_placeholder">3</h1>
+            <button type="button" id="save_score">Save Score</button>
+            <a id="retry_option" href="." >Retry</a>
+        </article>
+
+    </main>
+
+    <footer>
+        <section id="quiz_info_block_container"> <!-- Data blocks -->
+            <div class="quiz_info_block" id="text_block">
+                <h2>Chimpanzee test</h2>
+                <p>This is a test of working memory, made famous by a study that found that chimpanzees consistently outperform humans on this task.
+
+                    In the study, the chimps consistently outperformed humans, and some chimps were able to remember 9 digits over 90% of the time.
+                    
+                    This test is a variant of that concept, that gets increasingly difficult every turn, starting at 4 digits, and adding one every turn. If you pass a level, the number increases.</p>
+                <a target="_blank" href="https://www.youtube.com/watch?v=zsXP8qeFF6A">Chimp vs Human! | Memory Test | BBC Earth</a>
+            </div>
+
+            <div class="quiz_info_block" id="average_score_block">
+                <h2>Current Average Score:</h2>
+                <h1>12</h1>
+            </div>
+        </section>
+    </footer>
+
+</body>
+</html>

@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mainpage' #We have added mainpage to Installed Apps
+    'mainpage', #We have added mainpage to Installed Apps
+    'chimptest' #We have added chimptest to Installed Apps
 ]
 
 MIDDLEWARE = [

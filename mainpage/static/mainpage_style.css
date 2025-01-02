@@ -1,11 +1,11 @@
-*{
-    font-family: Bahnschrift;
-}
 body{
+    font-family: Bahnschrift;
     margin: 0; 
     background-color: #181c1c;
 }
-
+a{
+    text-decoration: none;
+}
 /*========= HEADER =========*/
 header{
     background-color: #101414;
@@ -33,7 +33,6 @@ header div h4{
 .menu_options:hover{
     cursor: pointer;
     color: #9b9b9b;
-    transform: scale(1.03);
 }
 /*========= HEADER =========*/
 
@@ -50,7 +49,7 @@ main article{
     justify-content: center;
 }
 main article h1{
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 0.1rem;
 }
 main article h1, h3{
@@ -95,11 +94,13 @@ footer{
     height: 5rem;
 }
 .soon{
+    box-shadow: 0 0 0.4rem rgba(255, 255, 0, 0.5); /* Symmetrical shadow on all sides */
     background-color: rgba(255, 255, 0, 0.5);
     padding: 0.15rem;
     border-radius: 0.5rem;
 }
 .new{
+    box-shadow: 0 0 0.4rem rgba(255, 0, 0, 0.5); /* Symmetrical shadow on all sides */
     background-color: rgba(255, 0, 0, 0.5);
     padding: 0.15rem;
     border-radius: 0.5rem;
