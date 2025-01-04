@@ -1,5 +1,7 @@
-body{
+*{
     font-family: Bahnschrift;
+}
+body{
     margin: 0; 
     background-color: #181c1c;
 }
@@ -17,22 +19,37 @@ header{
 #container{
     justify-content: center;
 }
-header div{
-    display: flex;
-}
-header div h4{
-    margin: 0.6rem 0.5rem;
-    color: #f2f0ed;
-}
-#spacer{
-    width: 25rem;
-}
-.menu_options{
+
+.menu_options, #button h4{
     transition: 0.3s;
 }
-.menu_options:hover{
+.menu_options:hover, #button:hover h4{
     cursor: pointer;
     color: #9b9b9b;
+}
+#container {
+    display: flex;
+    justify-content: space-between; /* Pushes left and right sections to opposite ends */
+    align-items: center; /* Vertically centers the content */
+    padding: 0.5rem;
+}
+
+.left-section, .right-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Adds spacing between items in each section */
+    /* padding: 1rem; */
+}
+.menu_options {
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    background: none; /* Removes background */
+    border: none; /* Removes border */
+}
+
+.inline-form {
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
 }
 /*========= HEADER =========*/
 

@@ -4,6 +4,7 @@ window.addEventListener('load', function ()
 const main = document.getElementById("main") //Main is the blue box
 
 document.getElementById("start_button").onclick = function(){
+    console.log("Xd")
     main.removeChild(document.getElementById("quiz_placeholder")) //Delete all of the article
 
     const table = document.createElement("table");
@@ -101,11 +102,9 @@ async function game()
             })
         curr_round += 1
     }
-    
-    console.log("Game finished! Your score: " + (curr_round - 5)); // 5 Because we always add curr_round at the end of each round and we start from round 4
-    document.getElementById("score_placeholder").textContent = curr_round - 5
+    let score = curr_round - 5 // 5 Because we always add curr_round at the end of each round and we start from round 4
 
-
+    document.getElementById("score_placeholder").textContent = score
     document.getElementById("game_end").style.display = "flex";
     main.removeChild(document.querySelector('table'))
     game_finished = true
