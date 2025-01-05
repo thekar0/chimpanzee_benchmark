@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="highest_holder">
+    <h1 id="highest_scores">25 Highest Scores</h1>
+</div>
+<table id="dashboard">
+    <tr>
+        <th>#</th> <!-- Add a column for row numbers -->
+        <th>Username:</th>
+        <th>Score:</th>
+        <th>Date:</th>
+    </tr>
+    {% for data in all_data %}
+        <tr>
+            <td>{{ forloop.counter }}</td> <!-- Display the row number -->
+            <td>{{ data.user }}</td>
+            <td>{{ data.score }}</td>
+            <td>{{ data.created_at }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

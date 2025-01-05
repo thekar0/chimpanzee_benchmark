@@ -87,7 +87,7 @@ main article h1, main article h2, main article h3, button{
     transform: scale(1.01);
     color: black;
 }
-table {
+#gametable {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
@@ -97,12 +97,12 @@ table {
     border-spacing: 0.5rem;
 }
 
-tr {
+.game_tr {
     display: flex;
     width: 100%;
 }
 
-td {
+.game_td {
     margin: 0.5rem;
     flex: 0rem 0rem 3.5rem; /* Set base size for each cell (fixed size) */
     height: 3.5rem;
@@ -120,7 +120,7 @@ td {
     transition: border 0.2s;
 }
 
-td:hover {
+.game_td:hover {
     border: 0.15rem solid rgba(255, 255, 255, 0.5);
     cursor: pointer;
 }
@@ -155,6 +155,14 @@ footer{
 #average_score_block h1{
     font-size: 5.8rem;
 }
+#recent_score{
+    font-size: 7rem;
+    margin: 1rem;
+}
+#recent_score_block{
+    text-align: center;
+}
+
 @media only screen and (max-width: 1050px) { /* When the screen's width is less than 1050px the game blocks are organized in a column */
     #games_blocks_container{
         flex-direction: column;

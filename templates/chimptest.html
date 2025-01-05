@@ -19,13 +19,33 @@
         <img src="{% static 'svg/chimp_test_white.svg' %}" alt="chimp_test" id="chimp_svg">
         <h2>Score</h2>
         <h1 id="score_placeholder"></h1>
-        <button type="button" id="save_score">Save Score</button>
-        <a id="retry_option" href="." >Retry</a>
+        <form method="post" action="{% url 'save_score' %}" onsubmit="console.log('Form submitted!');">
+            {% csrf_token %}
+            <input type="hidden" name="user" value="{{ user }}">  <!-- Pass user info -->
+            <input type="hidden" name="score" value="{{ score }}" id="transfer_score" readonly>  <!-- Pass score -->
+            {% if user.is_authenticated %}
+                <button type="submit" id="save_score">Save Score</button>
+            {% else %}
+                <p style="color: red; font-size: 0.8em;">You must be logged in to save your score.</p>
+            {% endif %}
+            <a id="retry_option" href="." >Retry</a>
+        </form>
     </article>
 </main>
 
 <footer>
     <section id="quiz_info_block_container"> <!-- Data blocks -->
+        {% if user.is_authenticated %}
+        <div class="quiz_info_block" id="recent_score_block">
+            <h2>Hello {{ request.session.quiz_user }}!</h2> 
+            {% if request.session.quiz_score %}
+            <h3>Your most recent score is:</h3>
+            <h1 id="recent_score">{{ request.session.quiz_score }}</h1>
+            {% else %}
+            <h2>You don't have any recent scores</h2>
+            {% endif %}
+        </div>
+        {% endif %}
         <div class="quiz_info_block" id="text_block">
             <h2>Chimpanzee test</h2>
             <p>This is a test of working memory, made famous by a study that found that chimpanzees consistently outperform humans on this task.
@@ -38,7 +58,13 @@
     
         <div class="quiz_info_block" id="average_score_block">
             <h2>Current Average Score:</h2>
-            <h1>12</h1>
+            <h1>
+                {% if avg_score %}
+                    {{ avg_score }}
+                {% else %}
+                    0
+                {% endif %}
+            </h1>
         </div>
     </section>
 

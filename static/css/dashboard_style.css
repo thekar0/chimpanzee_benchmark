@@ -1,0 +1,19 @@
+#dashboard{
+    margin: auto;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 30%;
+    background-color: #111514;
+    padding: 0.2rem;
+    color: #f2f0ed;
+}
+#dashboard tr:nth-child(even) {
+    background-color: #1b1f1e; /* Change color for odd rows */
+}
+#highest_holder{
+    text-align: center;
+}
+#highest_scores{
+    color: #f2f0ed;
+}

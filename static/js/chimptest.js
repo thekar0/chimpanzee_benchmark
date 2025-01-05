@@ -4,7 +4,6 @@ window.addEventListener('load', function ()
 const main = document.getElementById("main") //Main is the blue box
 
 document.getElementById("start_button").onclick = function(){
-    console.log("Xd")
     main.removeChild(document.getElementById("quiz_placeholder")) //Delete all of the article
 
     const table = document.createElement("table");
@@ -15,17 +14,19 @@ document.getElementById("start_button").onclick = function(){
         {
         // Create a new table row
         let newtr = document.createElement("tr")
+        newtr.classList.add("game_tr")
         for (let columns = 0; columns < 5; columns++) 
         {
             // Create a new table cell
             let newtd = document.createElement("td")
+            newtd.classList.add("game_td")
             cells.push(newtd) // Append the cell to the array
             newtr.appendChild(newtd) // Append the cell to the row
         }
         
         table.appendChild(newtr) // Append the row to the table
     }
-    
+    table.id = "game_table"
     // Append the table to the body (or any other container)
     main.appendChild(table)
     game()
@@ -105,6 +106,7 @@ async function game()
     let score = curr_round - 5 // 5 Because we always add curr_round at the end of each round and we start from round 4
 
     document.getElementById("score_placeholder").textContent = score
+    document.getElementById("transfer_score").value = score
     document.getElementById("game_end").style.display = "flex";
     main.removeChild(document.querySelector('table'))
     game_finished = true
