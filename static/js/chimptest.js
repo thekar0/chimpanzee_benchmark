@@ -10,12 +10,12 @@ document.getElementById("start_button").onclick = function(){
     cells = []
 
     // Loop to create rows and cells
-    for (let rows = 0; rows < 5; rows++) 
+    for (let rows = 0; rows < 3; rows++) 
         {
         // Create a new table row
         let newtr = document.createElement("tr")
         newtr.classList.add("game_tr")
-        for (let columns = 0; columns < 5; columns++) 
+        for (let columns = 0; columns < 3; columns++) 
         {
             // Create a new table cell
             let newtd = document.createElement("td")
@@ -27,9 +27,11 @@ document.getElementById("start_button").onclick = function(){
         table.appendChild(newtr) // Append the row to the table
     }
     table.id = "game_table"
+    table.setAttribute('draggable', false) // Stop user from dragging (and discovering) numbers under each box (ghost image)
     // Append the table to the body (or any other container)
     main.appendChild(table)
     game()
+
 }
 })
 
@@ -56,11 +58,12 @@ async function game()
             let random_index
             do 
             {
-                random_index = Math.floor(Math.random() * 25)
+                random_index = Math.floor(Math.random() * 9)
             } while (visible_cells.includes(random_index))
 
             visible_cells.push(random_index);
             cells[random_index].style.visibility = "visible"
+            cells[random_index].setAttribute('draggable', false) // Stop user from dragging (and discovering) numbers under each box (ghost image)
             cells[random_index].textContent = (i + 1)
         }
         curr_point = 0
@@ -111,3 +114,4 @@ async function game()
     main.removeChild(document.querySelector('table'))
     game_finished = true
 }
+

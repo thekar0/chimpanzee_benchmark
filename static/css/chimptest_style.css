@@ -62,7 +62,7 @@ main article h1, main article h2, main article h3, button{
 #chimp_svg{
     height: 15rem;
 }
-#start_button, #retry_option, #save_score{
+#start_button, #retry_option, #save_score_btn{
     display: flex;
     justify-content: center;
     width: 6rem;
@@ -82,7 +82,7 @@ main article h1, main article h2, main article h3, button{
     line-height: 2rem;
 }
 
-#start_button:hover , #retry_option:hover, #save_score:hover{
+#start_button:hover , #retry_option:hover, #save_score_btn:hover{
     background-color: #a17100;
     transform: scale(1.01);
     color: black;
@@ -103,6 +103,7 @@ main article h1, main article h2, main article h3, button{
 }
 
 .game_td {
+    user-select: none;
     margin: 0.5rem;
     flex: 0rem 0rem 3.5rem; /* Set base size for each cell (fixed size) */
     height: 3.5rem;

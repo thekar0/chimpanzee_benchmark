@@ -19,12 +19,12 @@
         <img src="{% static 'svg/chimp_test_white.svg' %}" alt="chimp_test" id="chimp_svg">
         <h2>Score</h2>
         <h1 id="score_placeholder"></h1>
-        <form method="post" action="{% url 'save_score' %}" onsubmit="console.log('Form submitted!');">
+        <form method="post" action="{% url 'save_score' %}" id="final_form">
             {% csrf_token %}
-            <input type="hidden" name="user" value="{{ user }}">  <!-- Pass user info -->
-            <input type="hidden" name="score" value="{{ score }}" id="transfer_score" readonly>  <!-- Pass score -->
+            <input type="hidden" name="user" value="{{ user }}">
+            <input type="hidden" name="score" value="{{ score }}" id="transfer_score" readonly>
             {% if user.is_authenticated %}
-                <button type="submit" id="save_score">Save Score</button>
+                <button type="submit" id="save_score_btn">Save Score</button>
             {% else %}
                 <p style="color: red; font-size: 0.8em;">You must be logged in to save your score.</p>
             {% endif %}
