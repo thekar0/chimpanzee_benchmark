@@ -10,12 +10,12 @@ document.getElementById("start_button").onclick = function(){
     cells = []
 
     // Loop to create rows and cells
-    for (let rows = 0; rows < 3; rows++) 
+    for (let rows = 0; rows < 5; rows++) 
         {
         // Create a new table row
         let newtr = document.createElement("tr")
         newtr.classList.add("game_tr")
-        for (let columns = 0; columns < 3; columns++) 
+        for (let columns = 0; columns < 5; columns++) 
         {
             // Create a new table cell
             let newtd = document.createElement("td")

@@ -171,5 +171,8 @@ footer{
     .games_blocks:hover{
         transform: translateY(-0.6rem);
   }
+  #quiz_info_block_container{
+    flex-direction: column;
+  }
 }
 /*========= FOOTER =========*/
