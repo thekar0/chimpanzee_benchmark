@@ -58,7 +58,7 @@ async function game()
             let random_index
             do 
             {
-                random_index = Math.floor(Math.random() * 9)
+                random_index = Math.floor(Math.random() * 25)
             } while (visible_cells.includes(random_index))
 
             visible_cells.push(random_index);
