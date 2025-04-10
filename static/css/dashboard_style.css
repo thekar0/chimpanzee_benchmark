@@ -17,3 +17,7 @@
 #highest_scores{
     color: #f2f0ed;
 }
+#tables{
+    display: flex;
+    justify-content: space-around;
+}

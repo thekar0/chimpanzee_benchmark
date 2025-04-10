@@ -3,22 +3,62 @@
 
 {% block content %}
 <div id="highest_holder">
-    <h1 id="highest_scores">25 Highest Scores</h1>
+    <h1 id="highest_scores">25 Highest Scores From Each Test</h1>
 </div>
-<table id="dashboard">
-    <tr>
-        <th>#</th> <!-- Add a column for row numbers -->
-        <th>Username:</th>
-        <th>Score:</th>
-        <th>Date:</th>
-    </tr>
-    {% for data in all_data %}
+
+<section id="tables">
+
+    <table id="dashboard">
         <tr>
-            <td>{{ forloop.counter }}</td> <!-- Display the row number -->
-            <td>{{ data.user }}</td>
-            <td>{{ data.score }}</td>
-            <td>{{ data.created_at }}</td>
+            <th>Reflexes</th> <!-- Add a column for row numbers -->
+            <th>Username:</th>
+            <th>Score:</th>
+            <th>Date:</th>
         </tr>
-    {% endfor %}
-</table>
+        {% for data in chimptest_data %}
+            <tr>
+                <td>{{ forloop.counter }}</td> <!-- Display the row number -->
+                <td>{{ data.user }}</td>
+                <td>{{ data.score }}</td>
+                <td>{{ data.created_at }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <table id="dashboard">
+        <tr>
+            <th>Chimptest</th> <!-- Add a column for row numbers -->
+            <th>Username:</th>
+            <th>Score:</th>
+            <th>Date:</th>
+        </tr>
+        {% for data in chimptest_data %}
+            <tr>
+                <td>{{ forloop.counter }}</td> <!-- Display the row number -->
+                <td>{{ data.user }}</td>
+                <td>{{ data.score }}</td>
+                <td>{{ data.created_at }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <table id="dashboard">
+        <tr>
+            <th>Verbal Memory</th> <!-- Add a column for row numbers -->
+            <th>Username:</th>
+            <th>Score:</th>
+            <th>Date:</th>
+        </tr>
+        {% for data in verbalmemory_data %}
+            <tr>
+                <td>{{ forloop.counter }}</td> <!-- Display the row number -->
+                <td>{{ data.user }}</td>
+                <td>{{ data.score }}</td>
+                <td>{{ data.created_at }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</section>
+
 {% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<script src="{% static 'js/verbalmemory.js' %}"></script>
+
+<main id="main">
+    <article id="quiz_placeholder">
+        <img src="{% static 'svg/verbal_memory_white.svg' %}" alt="verbal_memory" id="chimp_svg">
+        <h1>Verbal Memory</h1>
+        <h3>Ready to get started?</h3>
+        <button type="button" id="start_button">Start!</button>
+    </article>
+    <!-- Just do a screenshot -->
+    
+    <article id="game_end" style="display: none">
+        <img src="{% static 'svg/verbal_memory_white.svg' %}" alt="verbal_memory" id="chimp_svg">
+        <h2>Score</h2>
+        <h1 id="score_placeholder"></h1>
+        <form method="post" action="{% url 'save_verbalmemory_score' %}" id="final_form">
+            {% csrf_token %}
+            <input type="hidden" name="user" value="{{ user }}">
+            <input type="hidden" name="score" value="{{ score }}" id="transfer_score" readonly>
+            {% if user.is_authenticated %}
+                <button type="submit" id="save_score_btn">Save Score</button>
+            {% else %}
+                <p style="color: red; font-size: 0.8em;">You must be logged in to save your score.</p>
+            {% endif %}
+            <a id="retry_option" href="." >Retry</a>
+        </form>
+    </article>
+</main>
+
+<footer>
+    <section id="quiz_info_block_container"> <!-- Data blocks -->
+        {% if user.is_authenticated %}
+        <div class="quiz_info_block" id="recent_score_block">
+            <h2>Hello {{ request.session.quiz_user }}!</h2> 
+            {% if request.session.quiz_score %}
+            <h3>Your most recent score is:</h3>
+            <h1 id="recent_score">{{ request.session.quiz_score }}</h1>
+            {% else %}
+            <h2>You don't have any recent scores</h2>
+            {% endif %}
+        </div>
+        {% endif %}
+        <div class="quiz_info_block" id="text_block">
+            <h2>Verbal Memory Test</h2>
+            <p>This test measures how many words you can keep in short term memory at once.
+
+                The number of words you need to remember grows continually, until you can't keep them in your head anymore.
+                
+                Go as long as you can. You have 3 strikes until game over.
+                
+                Your score is how many turns you lasted.
+                
+                </p>
+        </div>
+    
+        <div class="quiz_info_block" id="average_score_block">
+            <h2>Current Average Score:</h2>
+            <h1>
+                {% if avg_score %}
+                    {{ avg_score }}
+                {% else %}
+                    0
+                {% endif %}
+            </h1>
+        </div>
+    </section>
+
+{% endblock %}

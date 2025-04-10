@@ -1,0 +1,44 @@
+#game_container{
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 25vh;
+    color: white;
+    font-size: 4vh;
+}
+#button_container{
+    display: flex;
+    color: rebeccapurple;
+}
+#word_placeholder{
+    margin: 0;
+}
+
+hr{
+    margin: 1vh 0 1vh 0;
+}
+
+.verbalmemory_button{
+    display: flex;
+    justify-content: center;
+    width: 6rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: #735100;
+    border: none;
+    border-radius: 0.2rem;
+    color: white;
+    transition: 0.3s;
+    text-decoration: none;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 0.4rem;
+    margin-right: auto;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+.verbalmemory_button:hover{
+    background-color: #a17100;
+    transform: scale(1.01);
+    color: black;
+}

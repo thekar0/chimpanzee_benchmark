@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'mainpage', # Added mainpage to Installed Apps
     'chimptest', # Added chimptest to Installed Apps
     'accounts', # Added accounts to Installed Apps
-    'dashboard' # Added dashboard to Installed Apps
+    'dashboard', # Added dashboard to Installed Apps
+    'verbalmemory'
 ]
 
 MIDDLEWARE = [

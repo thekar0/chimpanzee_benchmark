@@ -1,27 +1,35 @@
-#1. Temat Projektu
-    Uczeń zaproponuje samodzielnie temat projektu na podstawie własnych zainteresowań i możliwości. Poza obowiązującymi regulacjami prawnymi w Polsce, tematyka jest dowolna. Może być to na przykład:
-        portal będący uproszczoną kopią innego portalu (np. kwejk, twitter, instagram, tumblr)
-        dowolna gra, którą da się rozgrywać przy pomocy interfejsu webowego, np. statki, wisielec, master-mind, saper
-        portal użytkowy: system rezerwacji biletów, sklep internetowy, itp.
+# Setting Up and Running ChimpTest Locally
 
-#2. Mininalny zakres projektu
-    Projekt musi
-        Korzystać z frameworka Django
-        Obsługiwać przynajmniej 3 różne ścieżki
-        Zawierać przynajmniej 2 formularze HTML
-        Korzystać z bazy danych do przechowywania plików
-        Obsługiwać konta i sesje użytkowników
+# 1. Create a Virtual Environment and Install Django
+```bash
+python -m venv venv
+```
+### Activate the virtual environment
 
-#3. Termin oddania projektu:
-    Projekt zostanie oddany do końca dnia 10.01.2025
-    Oddanie projektu po terminie skutkuje obniżeniem oceny
+### On Windows
+```bash
+venv\Scripts\activate
+```
+### On macOS/Linux
+```bash
+source venv/bin/activate
+```
+## Install Django
+```bash
+pip install django
+```
+# 2. Run the Django Development Server
 
-#4. Forma oddania projektu:
-    Projekt zostanie dostarczony w formie publicznego repozytorium dostępnego na jednej z popularnych stron obsługujących repozytoria git (GitHub, GitLab).
+### Use one of the following commands
+```bash
+python manage.py runserver
+```
+# or
+```bash
+python3 manage.py runserver
+```
+# 3. Open the Web App
 
-#5. Kryteria oceny
-    Ponieważ kodowanie aplikacji nie jest łatwo kwantyfikowalne, ocena będzie kompleksowa i będzie brała pod uwagę:
-    Zgodność aplikacji z tematem
-    UX aplikacji, tj. wygodę użytkowania, przejrzystość projektu, intuicyjność przyjętych rozwiązań
-    Czytelność i poziom dokumentacji kodu
-    Historię powstawania kodu w formie commitów w repozytorium
+Paste this link into your browser:
+
+# http://127.0.0.1:8000/mainpage/
