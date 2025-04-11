@@ -22,7 +22,7 @@ def login_view(request):
             return redirect('../mainpage/')
     else:
         form = AuthenticationForm()
-    return render(request, "login.html", {'form':form})
+    return render(request, "mainpage.html", {'form':form})
 
 def logout_view(request):
     if request.method == 'POST':

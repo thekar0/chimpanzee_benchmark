@@ -9,8 +9,8 @@
 <!-- Vue App Mount Point -->
 <div id="scoreApp">
     <div id="tabs">
-        <button @click="currentTab = 'numbermemory'" :class="{ active: currentTab === 'numbermemory' }" ><img src="{% static 'svg/chimp_test_white.svg' %}" alt="chimp_test" class="games_blocks_svg"></button>
-        <button @click="currentTab = 'chimptest'" :class="{ active: currentTab === 'chimptest' }"><img src="{% static 'svg/number_memory_white.svg' %}" alt="reaction_time" class="games_blocks_svg"></button>
+        <button @click="currentTab = 'chimptest'" :class="{ active: currentTab === 'chimptest' }"><img src="{% static 'svg/chimp_test_white.svg' %}" alt="reaction_time" class="games_blocks_svg"></button>
+        <button @click="currentTab = 'numbermemory'" :class="{ active: currentTab === 'numbermemory' }" ><img src="{% static 'svg/number_memory_white.svg' %}" alt="chimp_test" class="games_blocks_svg"></button>
         <button @click="currentTab = 'verbalmemory'" :class="{ active: currentTab === 'verbalmemory' }"><img src="{% static 'svg/verbal_memory_white.svg' %}" alt="verbal_memory" class="games_blocks_svg"></button>
     </div>
 

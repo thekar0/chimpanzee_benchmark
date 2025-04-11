@@ -18,7 +18,15 @@ source venv/bin/activate
 ```bash
 pip install django
 ```
-# 2. Run the Django Development Server
+
+# 2. Apply Migrations
+
+### Use the following commands
+```bash
+python manage.py migrate
+```
+
+# 3. Run the Django Development Server
 
 ### Use one of the following commands
 ```bash
@@ -28,7 +36,7 @@ python manage.py runserver
 ```bash
 python3 manage.py runserver
 ```
-# 3. Open the Web App
+# 4. Open the Web App
 
 Paste this link into your browser:
 
