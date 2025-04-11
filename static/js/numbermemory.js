@@ -45,6 +45,9 @@ async function game()
     game_finished = false
     let score = 1
 
+    console.log("Here are the answers:");
+    
+
     while (game_finished == false) 
     {
         await new Promise((resolve) => {
@@ -54,19 +57,17 @@ async function game()
             console.log(number_to_remember)
             preview_number.textContent = number_to_remember
             preview_timer.classList.add("timer_running")
-            console.log("xdd");
 
             setTimeout(function() {
                 preview_container.style.display = "none"
                 answer_container.style.display = "block"
-            }, 2000); // Delay is 2000 milliseconds or 2 seconds
+            }, 3000); // Delay is 2000 milliseconds or 2 seconds
 
             answer_button.onclick = function () {
                 let answer = answer_input.value
                 answer_input.value = null
                 if (String(answer) == number_to_remember)
                 {
-                    console.log("gut");
                     score++
                     resolve()
                 }

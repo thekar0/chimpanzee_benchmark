@@ -21,3 +21,32 @@
     display: flex;
     justify-content: space-around;
 }
+#tabs{
+    width: 25%;
+    margin: auto;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111514;
+    border-radius: 12px;
+}
+
+button {
+    display: inline-block;
+    background-color: #ffffff00;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+.active {
+    height: 10vh;
+    background-color: #444444;
+    color: white;
+    border-radius: 12px;
+    transform: scale(1.04);
+}
+button:hover{
+    transform: scale(1.04);
+}

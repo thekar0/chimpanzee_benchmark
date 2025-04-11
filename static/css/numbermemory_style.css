@@ -1,9 +1,8 @@
 #preview_container{
     margin-top: auto;
     margin-bottom: auto;
-    width: 20%;
     text-align: center;
-
+    width: 100%;
 }
 #preview_number{
     color: white;
@@ -12,6 +11,8 @@
 }
 #preview_timer{
     height: 0.3vh;
+    width: 15%;
+    margin: auto;
     background-color: white;
 }
 #answer_container{
@@ -37,7 +38,7 @@
 }
 
 .timer_running{
-    animation: timer 2s linear;
+    animation: timer 3s linear;
 }
 
 input[type="number"]::-webkit-outer-spin-button,

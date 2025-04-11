@@ -6,59 +6,81 @@
     <h1 id="highest_scores">25 Highest Scores From Each Test</h1>
 </div>
 
-<section id="tables">
+<!-- Vue App Mount Point -->
+<div id="scoreApp">
+    <div id="tabs">
+        <button @click="currentTab = 'numbermemory'" :class="{ active: currentTab === 'numbermemory' }" ><img src="{% static 'svg/chimp_test_white.svg' %}" alt="chimp_test" class="games_blocks_svg"></button>
+        <button @click="currentTab = 'chimptest'" :class="{ active: currentTab === 'chimptest' }"><img src="{% static 'svg/number_memory_white.svg' %}" alt="reaction_time" class="games_blocks_svg"></button>
+        <button @click="currentTab = 'verbalmemory'" :class="{ active: currentTab === 'verbalmemory' }"><img src="{% static 'svg/verbal_memory_white.svg' %}" alt="verbal_memory" class="games_blocks_svg"></button>
+    </div>
 
-    <table id="dashboard">
+    <!-- Number Memory Table -->
+    <table v-show="currentTab === 'numbermemory'" id="dashboard">
         <tr>
-            <th>Reflexes</th> <!-- Add a column for row numbers -->
+            <th>#</th>
+            <th>Username:</th>
+            <th>Score:</th>
+            <th>Date:</th>
+        </tr>
+        {% for data in numbermemory_data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ data.user }}</td>
+            <td>{{ data.score }}</td>
+            <td>{{ data.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Chimptest Table -->
+    <table v-show="currentTab === 'chimptest'" id="dashboard">
+        <tr>
+            <th>#</th>
             <th>Username:</th>
             <th>Score:</th>
             <th>Date:</th>
         </tr>
         {% for data in chimptest_data %}
-            <tr>
-                <td>{{ forloop.counter }}</td> <!-- Display the row number -->
-                <td>{{ data.user }}</td>
-                <td>{{ data.score }}</td>
-                <td>{{ data.created_at }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-
-    <table id="dashboard">
         <tr>
-            <th>Chimptest</th> <!-- Add a column for row numbers -->
-            <th>Username:</th>
-            <th>Score:</th>
-            <th>Date:</th>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ data.user }}</td>
+            <td>{{ data.score }}</td>
+            <td>{{ data.created_at }}</td>
         </tr>
-        {% for data in chimptest_data %}
-            <tr>
-                <td>{{ forloop.counter }}</td> <!-- Display the row number -->
-                <td>{{ data.user }}</td>
-                <td>{{ data.score }}</td>
-                <td>{{ data.created_at }}</td>
-            </tr>
         {% endfor %}
     </table>
 
-    <table id="dashboard">
+    <!-- Verbal Memory Table -->
+    <table v-show="currentTab === 'verbalmemory'" id="dashboard">
         <tr>
-            <th>Verbal Memory</th> <!-- Add a column for row numbers -->
+            <th>#</th>
             <th>Username:</th>
             <th>Score:</th>
             <th>Date:</th>
         </tr>
         {% for data in verbalmemory_data %}
-            <tr>
-                <td>{{ forloop.counter }}</td> <!-- Display the row number -->
-                <td>{{ data.user }}</td>
-                <td>{{ data.score }}</td>
-                <td>{{ data.created_at }}</td>
-            </tr>
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ data.user }}</td>
+            <td>{{ data.score }}</td>
+            <td>{{ data.created_at }}</td>
+        </tr>
         {% endfor %}
     </table>
+</div>
 
-</section>
+<!-- Vue CDN Script -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const { createApp } = Vue;
+
+  createApp({
+    data() {
+      return {
+        currentTab: 'numbermemory'  // default tab
+      };
+    }
+  }).mount('#scoreApp');
+</script>
 
 {% endblock %}

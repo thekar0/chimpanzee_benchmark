@@ -19,7 +19,7 @@
         <img src="{% static 'svg/number_memory_white.svg' %}" alt="number_memory" id="chimp_svg">
         <h2>Score</h2>
         <h1 id="score_placeholder"></h1>
-        <form method="post" action="{% url 'save_verbalmemory_score' %}" id="final_form">
+        <form method="post" action="{% url 'save_numbermemory_score' %}" id="final_form">
             {% csrf_token %}
             <input type="hidden" name="user" value="{{ user }}">
             <input type="hidden" name="score" value="{{ score }}" id="transfer_score" readonly>
@@ -48,7 +48,7 @@
         {% endif %}
         <div class="quiz_info_block" id="text_block">
             <h2>Number Memory Test</h2>
-            <p>The average person can only remember 7 digit numbers reliably, but it's possible to do much better using mnemonic techniques. Some helpful links are provided below.
+            <p>You will have 2 seconds to remeber shown digit and you will be asked about it. The average person can only remember 7 digit numbers reliably, but it's possible to do much better using mnemonic techniques. Some helpful links are provided below.
             <br><br>
             <a href="https://en.wikipedia.org/wiki/Mnemonic_major_system">Mnemonic major system</a><br>
             <a href="https://en.wikipedia.org/wiki/Dominic_system">Dominic System</a><br>

@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import test_result
-from django.http import HttpResponse
-from .models import test_result
 from django.db import models
 
 def finish_quiz_view(request):
