@@ -1,0 +1,56 @@
+#preview_container{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 20%;
+    text-align: center;
+
+}
+#preview_number{
+    color: white;
+    font-size: 15vh;
+    margin: 0;
+}
+#preview_timer{
+    height: 0.3vh;
+    background-color: white;
+}
+#answer_container{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#answer_input{
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #ffffff;
+    outline: 0;
+    font-size: 7vh;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    margin-bottom: 1vh;
+    text-align: center;
+}
+#answer_button{
+
+}
+
+.timer_running{
+    animation: timer 2s linear;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@keyframes timer {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+  }

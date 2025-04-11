@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<script src="{% static 'js/verbalmemory.js' %}"></script>
+<script src="{% static 'js/numbermemory.js' %}"></script>
 
 <main id="main">
     <article id="quiz_placeholder">
@@ -16,7 +16,7 @@
     <!-- Just do a screenshot -->
     
     <article id="game_end" style="display: none">
-        <img src="{% static 'svg/verbal_memory_white.svg' %}" alt="verbal_memory" id="chimp_svg">
+        <img src="{% static 'svg/number_memory_white.svg' %}" alt="number_memory" id="chimp_svg">
         <h2>Score</h2>
         <h1 id="score_placeholder"></h1>
         <form method="post" action="{% url 'save_verbalmemory_score' %}" id="final_form">

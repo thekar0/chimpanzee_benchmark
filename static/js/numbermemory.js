@@ -6,32 +6,34 @@ const main = document.getElementById("main") //Main is the blue box
 document.getElementById("start_button").onclick = function(){
     main.removeChild(document.getElementById("quiz_placeholder")) //Delete all of the article
 
-    const game_container = document.createElement("div")
-    const button_container = document.createElement("div")
-    const word_placeholder = document.createElement("h2")
-    const hr = document.createElement("hr")
-    const seen_button = document.createElement("button")
-    const not_seen_button = document.createElement("button")
+    const preview_container = document.createElement("div")
+    const preview_number = document.createElement("h2")
+    const preview_timer = document.createElement("hr")
 
-    seen_button.textContent = "SEEN"
-    not_seen_button.textContent = "NEW"
+    const answer_container = document.createElement("div")
+    const answer_input = document.createElement("input")
+    const answer_button = document.createElement("button")
+    answer_button.textContent = "Submit"
 
-    button_container.id = "button_container"
-    seen_button.id = "seen_button"
-    not_seen_button.id = "not_seen_button"
-    word_placeholder.id = "word_placeholder"
-    game_container.id = "game_container"
+    preview_container.id = "preview_container"
+    preview_number.id = "preview_number"
+    preview_timer.id = "preview_timer"
 
-    seen_button.classList.add("verbalmemory_button")
-    not_seen_button.classList.add("verbalmemory_button")
+    answer_container.id = "answer_container"
+    answer_input.id = "answer_input"
+    answer_button.id = "answer_button"
+    answer_input.type = "number"
 
-    
-    button_container.appendChild(seen_button)
-    button_container.appendChild(not_seen_button)
-    game_container.appendChild(word_placeholder) // Append the h2 to the body (or any other container)
-    game_container.appendChild(hr)
-    game_container.appendChild(button_container)
-    main.appendChild(game_container)
+    answer_button.classList.add("verbalmemory_button")
+
+    preview_container.appendChild(preview_number)
+    preview_container.appendChild(preview_timer)
+
+    answer_container.appendChild(answer_input)
+    answer_container.appendChild(answer_button)
+
+    main.appendChild(preview_container)
+    main.appendChild(answer_container)
     game()
 
 }
@@ -40,74 +42,53 @@ document.getElementById("start_button").onclick = function(){
 
 async function game() 
 {
-    console.log("Seen:")
-    let not_seen = ["lantern", "crisp", "ember", "flint", "mist", "frost", "dusk", "gleam", "hush", "glint", "brook", "bramble", "drift", "rustle", "cloak"]
-    let seen = []
-    let score = 0
     game_finished = false
-    let current_word
-    let previous_word
+    let score = 1
 
     while (game_finished == false) 
     {
         await new Promise((resolve) => {
+            answer_container.style.display = "none"
+            preview_container.style.display = "block"
+            let number_to_remember = generate_number(score)
+            console.log(number_to_remember)
+            preview_number.textContent = number_to_remember
+            preview_timer.classList.add("timer_running")
+            console.log("xdd");
 
-            if ((Math.random() < 0.3) || seen.length < 2) //If seen array is empty (the beggining of the game)
-            {
-                do
+            setTimeout(function() {
+                preview_container.style.display = "none"
+                answer_container.style.display = "block"
+            }, 2000); // Delay is 2000 milliseconds or 2 seconds
+
+            answer_button.onclick = function () {
+                let answer = answer_input.value
+                answer_input.value = null
+                if (String(answer) == number_to_remember)
                 {
-                    random = Math.floor(Math.random() * not_seen.length)
-                    current_word = not_seen[random]
-                }   while(current_word == previous_word)
-
-                word_placeholder.textContent = current_word;
-                previous_word = current_word
-            }
-            else
-            {
-                do
-                {
-                    random = Math.floor(Math.random() * seen.length)
-                    current_word = seen[random]
-                }   while(current_word == previous_word)
-
-                word_placeholder.textContent = current_word
-                previous_word = current_word
-            }
-
-            seen_button.onclick = function() 
-            {
-                if (seen.includes(current_word))
-                {
+                    console.log("gut");
                     score++
+                    resolve()
                 }
                 else
                 {
                     game_finished = true
+                    resolve()
                 }
-                resolve()
-            }
-
-            not_seen_button.onclick = function()
-            {
-                if (seen.includes(current_word) == false)
-                {
-                    score++
-                    seen.push(current_word)
-                }
-                else
-                {
-                    game_finished = true
-                }
-                console.log(seen);
-                
-                resolve()
             }
         })
     }
-    game_container.style.display = "none"
+    answer_container.style.display = "none"
+    preview_container.style.display = "none"
     document.getElementById("score_placeholder").textContent = score
     document.getElementById("transfer_score").value = score
     document.getElementById("game_end").style.display = "flex";
 }
 
+function generate_number(n) {
+    let number = '';
+    for (let i = 0; i < n; i++) {
+        number += String(Math.floor(Math.random() * 10))
+    }
+    return number
+}
