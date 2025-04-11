@@ -1,0 +1,9 @@
+Prezentacja projektu
+====================
+
+- Czas trwania: optymalnie do 5 min, maksymalnie 10
+- Zakres prezentacji:
+	- Omówienie zaimplementowanych funkcjonalności aplikacji
+	- Omówienie review zebranego od kolegów z informacją co zostało poprawione
+- Forma prezentacji: Pokaz strony na żywo albo wideo/slajdy
+  Uwaga: prezentacja na żywo będzie wymagała odpalenia strony na VM na komputerze nauczycielskim.

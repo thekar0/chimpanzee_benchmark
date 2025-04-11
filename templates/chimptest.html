@@ -37,9 +37,9 @@
     <section id="quiz_info_block_container"> <!-- Data blocks -->
         {% if user.is_authenticated %}
         <div class="quiz_info_block" id="recent_score_block">
-            <h2>Hello {{ request.session.quiz_user }}!</h2> 
+            <h2 style="margin: 0;">Hello {{ request.session.quiz_user }}!</h2> 
             {% if request.session.quiz_score %}
-            <h3>Your most recent score is:</h3>
+            <h3 style="margin: 0; margin-top: 2rem;">Your most recent score on our tests is:</h3>
             <h1 id="recent_score">{{ request.session.quiz_score }}</h1>
             {% else %}
             <h2>You don't have any recent scores</h2>
@@ -57,7 +57,7 @@
         </div>
     
         <div class="quiz_info_block" id="average_score_block">
-            <h2>Current Average Score:</h2>
+            <h2>Current Average Score on all tests in this session:</h2>
             <h1>
                 {% if avg_score %}
                     {{ avg_score }}

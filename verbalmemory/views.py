@@ -26,7 +26,7 @@ def save_verbalmemory_score(request):
         result = verbalmemory_result(user=user, score=score)
         result.save()
 
-        return redirect('../')  # Redirect to a success page or results page
+        return redirect('.')  # Redirect to a success page or results page
 
     return render(request, 'verbalmemory.html')  # Render the template without a message
 

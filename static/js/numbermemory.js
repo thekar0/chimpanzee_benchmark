@@ -6,34 +6,32 @@ const main = document.getElementById("main") //Main is the blue box
 document.getElementById("start_button").onclick = function(){
     main.removeChild(document.getElementById("quiz_placeholder")) //Delete all of the article
 
-    const preview_container = document.createElement("div")
-    const number_placeholder = document.createElement("h2")
-    const timer_bar = document.createElement("hr")
+    const game_container = document.createElement("div")
+    const button_container = document.createElement("div")
+    const word_placeholder = document.createElement("h2")
+    const hr = document.createElement("hr")
+    const seen_button = document.createElement("button")
+    const not_seen_button = document.createElement("button")
 
-    const answer_container = document.createElement("div")
-    const answer_input = document.createElement("input")
-    const answer_button = document.createElement("button")
-    answer_button.textContent = "Submit"
+    seen_button.textContent = "SEEN"
+    not_seen_button.textContent = "NEW"
 
-    preview_container.id = "preview_container"
-    preview_number.id = "preview_number"
-    preview_timer.id = "preview_timer"
+    button_container.id = "button_container"
+    seen_button.id = "seen_button"
+    not_seen_button.id = "not_seen_button"
+    word_placeholder.id = "word_placeholder"
+    game_container.id = "game_container"
 
-    answer_container.id = "answer_container"
-    answer_input.id = "answer_input"
-    answer_button.id = "answer_button"
+    seen_button.classList.add("verbalmemory_button")
+    not_seen_button.classList.add("verbalmemory_button")
 
-    answer_button.classList.add("verbalmemory_button")
-
-    preview_container.appendChild(number_placeholder)
-    preview_container.appendChild(timer_bar)
-
-    answer_container.appendChild(answer_input)
-    answer_container.appendChild(answer_button)
-
-    main.appendChild(preview_container)
-    main.appendChild(answer_container)
-    answer_container.style.display = "none"
+    
+    button_container.appendChild(seen_button)
+    button_container.appendChild(not_seen_button)
+    game_container.appendChild(word_placeholder) // Append the h2 to the body (or any other container)
+    game_container.appendChild(hr)
+    game_container.appendChild(button_container)
+    main.appendChild(game_container)
     game()
 
 }
@@ -42,10 +40,13 @@ document.getElementById("start_button").onclick = function(){
 
 async function game() 
 {
+    console.log("Seen:")
+    let not_seen = ["lantern", "crisp", "ember", "flint", "mist", "frost", "dusk", "gleam", "hush", "glint", "brook", "bramble", "drift", "rustle", "cloak"]
+    let seen = []
+    let score = 0
     game_finished = false
-    let xd = 1
-
-    
+    let current_word
+    let previous_word
 
     while (game_finished == false) 
     {

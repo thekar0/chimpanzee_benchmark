@@ -8,8 +8,8 @@
 
 <main id="main">
     <article id="quiz_placeholder">
-        <img src="{% static 'svg/verbal_memory_white.svg' %}" alt="verbal_memory" id="chimp_svg">
-        <h1>Verbal Memory</h1>
+        <img src="{% static 'svg/number_memory_white.svg' %}" alt="verbal_memory" id="chimp_svg">
+        <h1>Number Memory</h1>
         <h3>Ready to get started?</h3>
         <button type="button" id="start_button">Start!</button>
     </article>
@@ -47,16 +47,14 @@
         </div>
         {% endif %}
         <div class="quiz_info_block" id="text_block">
-            <h2>Verbal Memory Test</h2>
-            <p>This test measures how many words you can keep in short term memory at once.
-
-                The number of words you need to remember grows continually, until you can't keep them in your head anymore.
-                
-                Go as long as you can. You have 3 strikes until game over.
-                
-                Your score is how many turns you lasted.
-                
-                </p>
+            <h2>Number Memory Test</h2>
+            <p>The average person can only remember 7 digit numbers reliably, but it's possible to do much better using mnemonic techniques. Some helpful links are provided below.
+            <br><br>
+            <a href="https://en.wikipedia.org/wiki/Mnemonic_major_system">Mnemonic major system</a><br>
+            <a href="https://en.wikipedia.org/wiki/Dominic_system">Dominic System</a><br>
+            <a href="https://en.wikipedia.org/wiki/Katapayadi_system">Katapayadi System</a><br>
+            <a href="https://en.wikipedia.org/wiki/Mnemonic">Mnemonic Devices</a><br>
+            </p>
         </div>
     
         <div class="quiz_info_block" id="average_score_block">

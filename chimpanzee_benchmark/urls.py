@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('', include("chimptest.urls")),
     path('', include("dashboard.urls")),
-    path('', include("verbalmemory.urls"))
+    path('', include("verbalmemory.urls")),
+    path('', include("numbermemory.urls"))
 ]

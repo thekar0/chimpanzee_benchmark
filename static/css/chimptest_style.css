@@ -149,6 +149,7 @@ footer{
     color: #f2f0ed;
     background-color: #0e1110;
     transition: 0.3s;
+    text-align: center;
 }
 
 #quiz_info_block_container{

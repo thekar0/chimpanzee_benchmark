@@ -1,0 +1,26 @@
+[] Ogólne wrażenia z użytkowania aplikacji, podsumowanie oceny
+
+Funkcjonalność
+--------------
+[] znalezione blędy w dostępie do ścieżek
+[] znalezione blędy w danych wejściowych szablonów
+[] czy logowanie działa
+[] czy wylogowanie działa
+[] czy można stworzyć dwóch użytkowników o tej samej nazwie, etc.
+
+
+User Experience (UX)
+--------------------
+[] Spójność stylistyczna
+[] Doszlifowanie interfejsu
+[] Kolejność tabów w formularzach i domyślny focus
+
+Jakość kodu
+-----------
+[] Porządek w importach
+[] Za mało/za dużo komentarzy?
+
+Inne uwagi
+----------
+[] README z instrukcją uruchomienia, dodatkową dokumentacją
+[] `__pycache__` i baza danych w repo?

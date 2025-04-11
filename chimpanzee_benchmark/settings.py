@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'chimptest', # Added chimptest to Installed Apps
     'accounts', # Added accounts to Installed Apps
     'dashboard', # Added dashboard to Installed Apps
-    'verbalmemory'
+    'verbalmemory',
+    'numbermemory'
 ]
 
 MIDDLEWARE = [
